@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  </script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #map {
+      height: 400px;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <label>Origin:</label>
+    <select id="origin" name="origin">
+      <option value="lab">LAB</option>
+      <option value="block b">BLOCK B</option>
+      <option value="block c">BLOCK C</option>
+      <option value="main gate">MAIN GATE</option>
+      <option value="tt">TEACHING TOWER</option>
+    </select>
+  </div>
+  <div>
+    <label>Destination:</label>
+    <select id="destination" name="destination">
+      <option value="tt">TEACHING TOWER</option>
+      <option value="lab">LAB</option>
+      <option value="block b">BLOCK B</option>
+      <option value="block c">BLOCK C</option>
+      <option value="main gate">MAIN GATE</option>
+    </select>
+  </div>
+  <div>
+    <button id="get-path-btn">Get Path</button>
+  </div>
+  <div id="map"></div>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9oIypXxGyJU8fbc__c5CXJPC_seo1_hk&callback=initMap&v=weekly"
+    async defer>
+    </script>
+
+  <script>
+    var map;
+    function initMap() {
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: { lat: -6.815282, lng: 39.279995 },
+        zoom: 17
+      });
+    }
+    $(document).ready(function () {
+      $("#get-path-btn").click(function () {
+
+        var origin = $("#origin").val();
+        var destination = $("#destination").val();
+        if (origin == "" || destination == "") {
+          alert("Please select origin and destination.");
+        } else {
+          $.ajax({
+            url: 'get_path.php',
+            type: 'POST',
+            data: {
+              origin: origin,
+              destination: destination
+            },
+            dataType: 'json',
+
+            error: function (xhr, status, error) {
+              console.log(xhr.responseText);
+              console.log(status);
+              console.log(error);
+            },
+            success: function (data) {
+
+              pathLine.setMap(null);
+
+              var path = JSON.parse(data);
+              var pathCoordinates = [];
+              for (var i = 0; i < path.length; i++) {
+                pathCoordinates.push({ lat: parseFloat(path[i].latitude), lng: parseFloat(path[i].longitude) });
+              }
+              var pathLine = new google.maps.Polyline({
+                path: pathCoordinates,
+                geodesic: true,
+                strokeColor: '#FF0000',
+                strokeOpacity: 1.0,
+                strokeWeight: 2
+              });
+              pathLine.setMap(map);
+            }
+          });
+        }
+      });
+    });
+  </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTER</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .topane{
+            padding-top: 1%;
+        }
+        .midpane{
+            padding-top: 2%;
+        }
+        .tophead{
+            font-size: 50px;
+        }
+        .login{
+            background-color: blue;
+            padding: 10px;
+            border-radius: 15px;
+            color: white;
+        }
+        body{
+            background-color: green;
+        }
+        .logo{
+            background-color: white;
+            width: 10%;
+            height: 5%;
+            border-radius: 60%;
+        }
+        .a{
+            color: white;
+        }
+        
+        .logo2{
+            animation: rotation 2s infinite linear;
+            transform-origin: center;
+            align-items: center;
+            position: relative;
+            
+            height: 120px;
+            width: 100px;
+            
+
+        }
+        @keyframes rotation {
+            from {
+                transform: scaleX(1);
+               }
+               to {
+                transform: scaleX(-1);
+               }
+           }
+    </style>
+</head>
+<body>
+    <center>
+        <div class="topane">
+            <h2 class="tophead">DIT NAVIGATION SYSTEM</h2>
+            <div class="logo">
+                <img src="dit2.png" alt="dit-llogo" class="logo2">
+            </div>
+            
+        </div>
+        <div class="midpane">
+            <form method="POST" action="register.php">
+            
+            <input type="text" placeholder="Email" name="email"></input><br><br>
+            
+            <input type="text" placeholder="Name" name="username"></input><br><br>
+            
+            <label>GENDER</label>
+            <select name="gender">
+                <option value="male">MALE</option>
+                <option value="female">FEMALE</option>
+            </select><br><br>
+            <input type="text" placeholder="Password" name="password"></input><br><br>
+            <input type="password" placeholder="Confirm password" name="password2"></input><br><br>
+            <input type="submit" value="REGISTER" class="login">
+        </form>
+        <p>Already have an account? <a href="login.html" class="a">Sign in</a></p>
+        </div>
+    </center>
+    
+</body>
+</html>

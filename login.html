@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+
+    <style>
+        *{
+            box-sizing: border-box;
+            
+        }
+        .page{
+            height: 100%;
+            margin-bottom: 10px;
+        }
+        .topane{
+            background-color: green;
+            padding-top: 1%;
+            
+        }
+        .midpane{
+            border: 2px solid black;
+            border-radius: 20%;
+            padding-top: 3%;
+            background-color: white;
+            width: 300px;
+            height: 300px;
+        }
+        .midpanetop{
+         padding-top: 30px;
+        }
+        
+        .tophead{
+            background-color: green;
+            font-size: 50px;
+        }
+        .login{
+            background-color: blue;
+            padding: 10px;
+            border-radius: 15px;
+            color: white;
+        }
+        .logo{
+            background-color: white;
+            width: 10%;
+            height: 5%;
+            border-radius: 60%;
+        }
+        
+        .logo2{
+            animation: rotation 2s infinite linear;
+            transform-origin: center;
+            align-items: center;
+            position: relative;
+            
+            height: 120px;
+            width: 100px;
+            
+
+        }
+        @keyframes rotation {
+            from {
+                transform: scaleX(1);
+               }
+               to {
+                transform: scaleX(-1);
+               }
+           }
+           .bottom{
+            height: 10%;
+            background-color: green;
+           }
+           body{
+            background-color: green;
+           }
+           .a{
+            font-style: italic;
+            
+            
+           }
+           
+           
+    </style>
+</head>
+<body>
+    
+     <center>
+    <div class="topane">
+        <h2 class="tophead">DIT NAVIGATION SYSTEM</h2>
+        <div class="logo">
+            <img src="dit2.png" alt="dit-llogo" class="logo2">
+        </div>
+        
+        
+    </div>
+    <div class="midpanetop">
+        <div class="midpane">
+            <form method="POST" action="login.php">
+            <label><b>EMAIL    </b></label><br>
+            <input type="text" placeholder="email" name="email"></input><br><br>
+            <label><b>PASSWORD: </b></label><br>
+            <input type="password" placeholder="password" name="password"></input><br><br>
+            <input type="submit" value="LOGIN" class="login">
+            <br><br>
+        </form>
+        <a href="register.html">Don't have an acccount?</a>
+        </div>
+        
+    </div>
+    
+    
+</center>
+
+</body>
+</html>

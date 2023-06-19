@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            background-image: url('dith.jpg');
+            background-position: center;
+            background-size: cover;
+            background-color: rgba(0,0,0,0.9);
+            background-blend-mode:darken;
+            opacity: 9;
+        }
+        .topbar{
+            position: relative;
+            display: flex;
+            width: 10%;
+            height: 10%;
+            z-index: 1;
+        }
+        .toplogo{
+            float: left;
+            width: 300%;
+            height: 30%;
+            
+        }
+        .content{
+            padding-top: 12%;
+            width: 50%;
+            z-index: 1;
+        }
+        .welc{
+            font-size: 90px;
+            color: yellow;
+        }
+        .cont{
+            font-size: 25px;
+            color: white;
+        }
+        .gobtn{
+            background-color: rgb(211, 211, 7);
+            color: white;
+            padding: 15px;
+            font-size: 25px;
+            text-decoration: none;
+        }
+        .outbtn{
+            float: right;
+            margin-right: 10px;
+            background-color: greenyellow;
+            padding: 20px;
+            font-size: large;
+            
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="topr" class="outbtn">
+<a href="login.html" class="outbtn"> SIGN OUT</a>
+  
+        </div>
+    <div class="topbar">
+        <img src="dittop.png" alt="dit home" class="toplogo"> 
+    </div>
+    
+</div>
+    <div class="content">
+        <span class="welc">WELCOME</span>
+        <P class="cont">The university navigation system is here to support your quick navigation around the institute.
+            Let's help you locate classes, offices and and other important locations you need. 
+        Start exploring our website now and experience the convenience and ease of navigating through 
+        various locations of the institute.
+    </P>
+    <br><br>
+    <a href="index.php" class="gobtn"> Let's get you started</a>
+    </div>
+</body>
+</html>
